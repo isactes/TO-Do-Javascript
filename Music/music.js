@@ -85,8 +85,6 @@ function playSong(){
     playBtn.setAttribute('title', 'Pause');
     music.play();
 }
-
-
 //Pause
 
 function pauseSong(){
@@ -103,7 +101,7 @@ playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 function loadSong(song){
     title.textContent = song.displayName;
     artist.textContent = song.artist;
-    music.src = `music/${song.name}.mp3`;
+    music.src = 'music/${song.name}.mp3';
     image.src = `img/${song.name}.jpg`;
 }
 
@@ -144,7 +142,7 @@ function updateProgressBar(e){
         const progressPercent = (currentTime / duration) * 100;
         progress.style.width = `${progressPercent}%`;
         //CAlculate display for duration
-        const durationMinutes = Math.florr(duration / 60);
+        const durationMinutes = Math.floor(duration / 60);
         let durationSeconds = Math.floor(duration % 60);
         if (durationSeconds < 10) {
             durationSeconds = `0${durationSeconds}`;
