@@ -57,3 +57,44 @@ function acabanEnA(words) {
 }
 
 console.log("acaban en a", acabanEnA(["acbada", "acbass", "acute", "haber", " coerced", "abacaron"]))
+
+
+/*
+Ordenamiento de Arrays en JavaScript
+
+Recibes una lista de números. Debes ordenar los números de menor a mayor según su valor absoluto. Eso quiere decir que los números negativos pierden el signo y se ordenan como si fueran positivos.
+
+
+Por ejemplo, si recibes [5, -10, -2, -25, -7] deberías devolver [-2, 5, -7, -10, -25].
+
+
+Puedes usar el método Math.abs(num) para obtener el valor absoluto de un número.
+*/
+function sortAbsoluteNumbers(numbers) {
+  let newArrays = []
+  for (let i = 0; i < numbers.length; i++) {
+    const element = Math.abs(numbers[i]);
+    newArrays.push(element)
+  }
+  newArrays.sort((a, b) => a -b);
+  return newArrays
+}
+
+console.log("Este no tiene el valor absoluto", sortAbsoluteNumbers([5, -10, -2, -25, -7]))
+
+
+// Pendiente
+function sortAbsoluteNumds(numbers) {
+  let ansoluteArra = [];
+  for (let i = 0; i < numbers.length; i++) {
+    const element = {
+      value: numbers[i],
+      absoluteValue: Math.abs(numbers[i])
+    }
+    ansoluteArra.push(element)
+  }
+  ansoluteArra.sort((a, b) => a.absoluteValue - b.absoluteValue)
+  return ansoluteArra.map( element => element.value);
+}
+
+console.log("Este tiene el valor absoluto", sortAbsoluteNumds([5, -10, -2, -25, -7]))
