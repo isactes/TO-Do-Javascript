@@ -98,3 +98,17 @@ function sortAbsoluteNumds(numbers) {
 }
 
 console.log("Este tiene el valor absoluto", sortAbsoluteNumds([5, -10, -2, -25, -7]))
+/*
+
+Transformación de Arrays en JavaScript
+
+
+Recibes dos parámetros: una lista de palabras words y una palabra word. Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y devuelve todas las palabras de words que sean más largas (length) que el número del índice.
+
+
+Ten en cuenta que la palabra word siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
+*/
+
+function buscaPalabras(word, words) {
+  // Tu codigo
+}
