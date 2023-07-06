@@ -83,7 +83,7 @@ function sortAbsoluteNumbers(numbers) {
 console.log("Este no tiene el valor absoluto", sortAbsoluteNumbers([5, -10, -2, -25, -7]))
 
 
-// Pendiente
+// Correcto
 function sortAbsoluteNumds(numbers) {
   let ansoluteArra = [];
   for (let i = 0; i < numbers.length; i++) {
