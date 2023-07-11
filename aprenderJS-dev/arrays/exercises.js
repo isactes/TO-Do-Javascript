@@ -109,6 +109,35 @@ Recibes dos parámetros: una lista de palabras words y una palabra word. Primero
 Ten en cuenta que la palabra word siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
 */
 
-function buscaPalabras(word, words) {
+function buscaPalabrasWithFor(words, word) {
   // Tu codigo
+  const wordIndex = words.indexOf(word)
+  const wordLength = word.length;
+  const longestWords = [];
+  for (let i = 0; i < words.length; i++) {
+    if (i !== wordIndex && words[i].length > wordLength) {
+      longestWords.push(words[i]);
+    }
+  }
+  return longestWords;
 }
+function buscaPalabrasfilterMap(words, word) {
+  // Tu codigo
+  const wordIndex = words.indexOf(word)
+  const wordLength = word.length;
+  const longestWords = words
+  .filter((w, index) => index !== wordIndex && w.length > wordLength);
+  return longestWords;
+}
+
+
+
+const words = ["apple", "banana", "orange", "grapefruit", "mango"];
+const word = "orange";
+
+const resultFor = buscaPalabrasWithFor(words, word);
+const resultFilterMap = buscaPalabrasfilterMap(words, word);
+console.log("Longer words:", result); 
+console.log("Longer words:", resultFilterMap); 
+
+// NO SE POR QUE NO LO HAGGARA EN SU CONSOLOA DE MIDU DE LA PRUEBA Transformación de Arrays en JavaScript
