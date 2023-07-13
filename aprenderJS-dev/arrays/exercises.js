@@ -157,7 +157,6 @@ const matrix = [
 ]
 
 function findJavaScript(matrix) {
-  // tu código aquí
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {    
       if (matrix[i][j] === "JavaScript") {
@@ -170,3 +169,16 @@ function findJavaScript(matrix) {
 
 const position = findJavaScript(matrix)
 console.log(position) // -> [0, 2]
+
+/*
+  Algoritmos con Arrays
+
+  En una biblioteca queremos saber qué libro es el que menos páginas tiene y el que más páginas. Por suerte, no hay dos libros con el mismo número de páginas.
+
+
+Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.
+*/
+
+function minAndMaxWord(words) {
+  // codigo
+}
