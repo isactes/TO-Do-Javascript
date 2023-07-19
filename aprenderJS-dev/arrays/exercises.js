@@ -179,6 +179,21 @@ console.log(position) // -> [0, 2]
 Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.
 */
 
-function minAndMaxWord(words) {
-  // codigo
+function minAndMaxPagesBooks(pagesArray) {
+  if (!Array.isArray(pagesArray) || pagesArray.length === 0) {
+    throw new Error("Invalid input. Please provide a non-empty array.");
+  }
+
+  let minIndex = 0;
+  let maxIndex = 0;
+
+  for (let i = 1; i < pagesArray.length; i++) {
+    if (pagesArray[i] < pagesArray[minIndex]) {
+      minIndex = i;
+    } else if (pagesArray[i] > pagesArray[maxIndex]) {
+      maxIndex = i;
+    }
+  }
+
+  return [minIndex, maxIndex];
 }

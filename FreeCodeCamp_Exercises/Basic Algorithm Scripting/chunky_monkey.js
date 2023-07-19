@@ -7,7 +7,7 @@ Write a function that splits an array (first argument) into groups the length of
 
 function chunkArrayInGroups(arr, size) {
   let newArr = []
-  for (let i = 0; i < array.length; i += size) {
+  for (let i = 0; i < arr.length; i += size) {
     newArr.push(arr.slice(i, i + size))
     
   }
