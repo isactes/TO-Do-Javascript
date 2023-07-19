@@ -9,8 +9,18 @@ Hint: Try converting each value to a Boolean.
 */
 
 function bouncer(arr) {
+  let newArrays = []
   
-  return arr;
+  for (let i = 0; i < arr.length; i += 1) {
+    let element = arr[i];
+    console.log(element)
+    if (element) {
+      newArrays.push(arr[i])
+    }
+    
+  }
+
+  return newArrays;
 }
 
-bouncer([7, "ate", "", false, 9]);
+console.log("Falsy Boucer", bouncer([7, "ate", "", false, 9]));
