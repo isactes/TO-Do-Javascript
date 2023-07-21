@@ -179,6 +179,37 @@ console.log(position) // -> [0, 2]
 Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.
 */
 
-function minAndMaxWord(words) {
-  // codigo
+function minAndMaxPagesBooks(pagesArray) {
+  if (!Array.isArray(pagesArray) || pagesArray.length === 0) {
+    throw new Error("Invalid input. Please provide a non-empty array.");
+  }
+
+  let minIndex = 0;
+  let maxIndex = 0;
+
+  for (let i = 1; i < pagesArray.length; i++) {
+    if (pagesArray[i] < pagesArray[minIndex]) {
+      minIndex = i;
+    } else if (pagesArray[i] > pagesArray[maxIndex]) {
+      maxIndex = i;
+    }
+  }
+
+  return [minIndex, maxIndex];
+}
+
+/*
+Objetos
+
+Tenemos una función que recibe dos parámetros. name y subs. Haz que la función devuelva un objeto con la siguiente información:
+
+name con el valor del parámetro name
+subscribers con el valor del parámetro subs
+hash, con el valor de la longitud del string name multiplicado por el parámetro subs
+Un método getStatus que devuelva el texto El canal de <name> tiene <subs> suscriptores. Por ejemplo, para name = 'Dani' y subs = 100, el método getStatus devolvería El canal de Dani tiene 100 suscriptores.
+¡Ojo! El método getStatus debe devolver el texto, NO imprimirlo por consola.
+*/
+
+function createObject(name, subs) {
+  // tu código aquí
 }
