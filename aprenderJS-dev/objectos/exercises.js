@@ -12,4 +12,16 @@ Un método getStatus que devuelva el texto El canal de <name> tiene <subs> suscr
 
 function createObject(name, subs) {
     // tu código aquí
+    const newInfo = {
+      name: name,
+      subscribers: subs,
+      hash: name.length * subs,
+      getStatus: function() {
+        return `El canal de ${this.name} tiene ${this.subscribers} suscriptores`
+      }
+    }
+    return newInfo    
   }
+
+  const sunsds = createObject("Miguel", 100)
+  console.log("new", sunsds.getStatus())
