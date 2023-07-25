@@ -25,3 +25,37 @@ function createObject(name, subs) {
 
   const sunsds = createObject("Miguel", 100)
   console.log("new", sunsds.getStatus())
+
+
+  /*
+  Atajos para trabajar con objetos
+
+
+  
+  */
+
+  // ¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+
+  const person1 ={
+    name: "isactes",
+    age: 29,
+    hobbies: [ "reading", "play Videogames", "music"]
+    }
+
+    const { age: personAge} = person
+
+    console.log("Atajos de objectos", age)
+    // Imprime age is not defined 
+
+    // ¿Qué se imprimirá en la consola al ejecutar el siguiente código:
+
+    const person2 = {
+      name: "isactes",
+      age: 29,
+      hobbies: [ "reading", "play videogames", "music"]
+    }
+
+    const { weigth = 70, heigth =180 } = person2
+
+    console.log("Atajos de objectos", weigth, heigth)
+    // imprime los valores que le asignamos a las const ya que no existen en nuestro array person2
