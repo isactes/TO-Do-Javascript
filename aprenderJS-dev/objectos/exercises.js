@@ -59,3 +59,17 @@ function createObject(name, subs) {
 
     console.log("Atajos de objectos", weigth, heigth)
     // imprime los valores que le asignamos a las const ya que no existen en nuestro array person2
+
+    /*
+    Iterando Objetos en JavaScript
+
+    Tienes una función que recibe un objeto como parámetro. La función debe retornar un array con el nombre de las propiedades que su tipo sea boolean.
+    
+    Por ejemplo, para el objeto { a: true, b: 42, c: false } la función debe retornar ['a', 'c'] ya que son las dos propiedades que tienen valores booleanos.
+    */
+
+    function getKeysOfBooleanValues(obj) {
+      
+    }
+
+    //repasa la lecion
