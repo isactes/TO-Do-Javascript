@@ -62,12 +62,56 @@ function createObject(name, subs) {
 
     /*
     Iterando Objetos en JavaScript
+    */
 
+    // ejemplos 
+    const spidermanKeys = {
+      name: 'Spidey',
+      universe: 42,
+      powers: ['web', 'invisibility', 'spider-sense']
+    }
+    const properties = Object.keys(spidermanKeys)
+    console.log("el numeor de mis propiedas", properties.length)
+    properties.forEach(p => {
+      console.log("propiedadaes", p)
+    })
+
+    // ejmplos
+    const spidermanValues = {
+      name: 'Spidey',
+      universe: 42,
+      powers: ['web', 'invisibility', 'spider-sense']
+    }
+
+    const values = Object.values(spidermanValues)
+
+    console.log("valores de nuestra propiedades", values)
+
+    values.forEach(v => {
+      console.log("values", v)
+    })
+
+    // ejmplos 
+    const spidermanEntries = {
+      name: 'Spidey',
+      universe: 42,
+      powers: ['web', 'invisibility', 'spider-sense']
+    }
+
+    const entries = Object.entries(spidermanEntries)
+
+    console.log("nos trae tanto las propiedades y vlaores de nuestro array", entries)
+
+    entries.forEach(e => {
+      console.log("nuestros entries", e)
+    })
+
+
+    /*
     Tienes una función que recibe un objeto como parámetro. La función debe retornar un array con el nombre de las propiedades que su tipo sea boolean.
     
     Por ejemplo, para el objeto { a: true, b: 42, c: false } la función debe retornar ['a', 'c'] ya que son las dos propiedades que tienen valores booleanos.
     */
-
     function getKeysOfBooleanValues(obj) {
       
     }
