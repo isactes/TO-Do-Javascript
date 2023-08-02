@@ -100,7 +100,7 @@ function createObject(name, subs) {
 
     const entries = Object.entries(spidermanEntries)
 
-    console.log("nos trae tanto las propiedades y vlaores de nuestro array", entries)
+    console.log("nos trae tanto las propiedades y valores de nuestro array", entries)
 
     entries.forEach(e => {
       console.log("nuestros entries", e)
@@ -113,7 +113,17 @@ function createObject(name, subs) {
     Por ejemplo, para el objeto { a: true, b: 42, c: false } la función debe retornar ['a', 'c'] ya que son las dos propiedades que tienen valores booleanos.
     */
     function getKeysOfBooleanValues(obj) {
-      
+      const newObj = []
+      for (const val in obj) {
+        console.log("🤔 keys", val)
+        if (typeof obj[val] === "boolean") {
+          newObj.push(val)
+        }
+        console.log("✨ newObj", newObj)
+      }
+      return newObj
     }
+
+    console.log("❤️", getKeysOfBooleanValues({ a: true, b: 42, c: false }))
 
     //repasa la lecion
