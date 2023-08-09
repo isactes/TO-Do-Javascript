@@ -145,7 +145,23 @@ const watchList = [
 
 // Only change code below this line
 
-const ratings = watchList.map((titulo) => titulo.Title );
+// const ratings = watchList.map(movie => ({
+//   title: movie["Title"],
+//   rating: movie["imdbRating"]
+// }));
+
+// const ratings = watchList.map(movie => {
+//   let getData = {}
+//   getData["title"] = movie["Title"]
+//   getData["rating"] = movie["imdbRating"]
+//   return getData
+// })
+let ratings = watchList.map( function movie(movie) {
+  let getData = {}
+  getData.title = movie["Title"]
+  getData.rating = movie["imdbRating"]
+  return getData
+})
 
 
 // Only change code above this line
