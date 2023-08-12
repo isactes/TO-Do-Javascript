@@ -19,22 +19,28 @@ Adding one to a number is not very exciting, but we can apply these principles w
 const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 // Change code below this line
-function add(bookName) {
-
-  bookList.push(bookName);
-  return bookList;
+function add(originalBooklist, bookName) {
+  let newBookList = [...originalBooklist]
+  newBookList.push(bookName);
+  return newBookList;
   
   // Change code above this line
 }
 
 // Change code below this line
-function remove(bookName) {
-  const book_index = bookList.indexOf(bookName);
+function remove(originalBooklist, bookName) {
+  const book_index = originalBooklist.indexOf(bookName);
   if (book_index >= 0) {
-
-    bookList.splice(book_index, 1);
-    return bookList;
+    let newBookList = [...originalBooklist]
+    newBookList.splice(book_index, 1);
+    return newBookList;
 
     // Change code above this line
     }
 }
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+var newestBookLits = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies')
+
+console.log(newBookList)
