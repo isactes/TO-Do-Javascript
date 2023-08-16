@@ -155,13 +155,18 @@ function getRating(watchList) {
   // Only change code below this line
   // let averageRating = [{}];
 
-  const averageRating = watchList
+  const newArray = watchList
   .filter(imdbChris => imdbChris.Director === "Christopher Nolan")
-  .map(arraMovies => Number(arraMovies.imdbRating))
-  // console.log("🚧", averageRating)
-  .reduce((sum, rat) => sum + rat )
-  watchList.filter(imdChris => imdChris.Director === "Christopher Nolan")
-  console.log("🚧 average", averageRating)
+  .map(rating => {
+    rating.imdbRating = parseFloat(rating.imdbRating)
+    console.log("parse", rating.imdbRating)
+    return rating
+  })
+  console.log("🚧 NEW", newArray)
+
+  const averageRating = newArray
+  .reduce((sum, rating) => sum + rating.imdbRating, 0) / newArray.length
+  console.log("🚧 2", averageRating)
   // Only change code above this line
   return averageRating;
 }
