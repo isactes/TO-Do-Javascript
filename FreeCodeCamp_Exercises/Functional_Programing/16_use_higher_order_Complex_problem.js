@@ -10,9 +10,15 @@ Now that you have worked through a few challenges using higher-order functions l
 
 const squareList = arr => {
   // Only change code below this line
-  return arr;
+  const newArray = arr
+  // .filter(item => item > 0)
+  // .reduce((a, current) => a.concat(current*current), [])
+  // .filter(num =>  Number.isInteger(num)) 
+  .filter(num => num > 0 && num % parseInt(num) === 0)
+  .map(num => Math.pow(num, 2))
+  return newArray;
   // Only change code above this line
 };
 
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
-console.log(squaredIntegers);
+const squaredIntegers = squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]);
+console.log("✨",squaredIntegers);
