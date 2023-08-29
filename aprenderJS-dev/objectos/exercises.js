@@ -147,17 +147,17 @@ Pista: ¡Recuerda que en una clase anterior hemos visto cómo podemos acceder a 
 
 function searchInOcean(ocean, section, item) {
   // tu código aquí
-  const ocean = {
-    deep: {
-      treasure: "gold",
-      wreckage: "ship",
-    },
-  };
-  
-  const place = "deep";
-  const targetItem = "treasure";
-  
-  const found = searchInOcean(ocean, place, targetItem);
-
   return ocean?.[section]?.[item] !== undefined;
 }
+
+const ocean = {
+  deep: {
+    treasure: "gold",
+    wreckage: "ship",
+  },
+};
+
+const place = "deep";
+const targetItem = "treasure";
+
+const found = searchInOcean(ocean, place, targetItem);
