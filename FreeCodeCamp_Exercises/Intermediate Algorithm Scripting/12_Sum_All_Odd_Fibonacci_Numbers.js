@@ -10,7 +10,16 @@ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less
 */
 
 function sumFibs(num) {
-  return num;
+  let prevNumber = 0
+  let currNumber = 1
+  let result = 0
+  while (currNumber <= num) {
+    if (currNumber % 2 !== 0) {
+      result += currNumber
+    }
+    currNumber += prevNumber;
+    prevNumber = currNumber - prevNumber
+  }
+  return result
 }
-
-console.log(sumFibs(4));
+console.log("✨",sumFibs(1000));
