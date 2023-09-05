@@ -26,3 +26,25 @@ function sumPrimes(num) {
 }
 
 console.log("✨",sumPrimes(977));
+
+
+// Second option to made this problem 
+function sumPrimes(num) {
+  if (num < 2) {
+    return false
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false
+    }
+    return true;
+  }
+  let sum = 0;
+  for (let i = 2; i <= num; i++) {
+    if (isPrime(i))
+      sum += i;
+  }
+  return sum;
+}
+
+console.log("✨",sumPrimes(10));
