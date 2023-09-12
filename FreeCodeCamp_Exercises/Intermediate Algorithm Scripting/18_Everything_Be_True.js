@@ -11,7 +11,10 @@ Remember, you can access object properties through either dot notation or [] not
 */
 
 function truthCheck(collection, pre) {
-  return pre;
+  const result  = collection.every(function (ele) {
+    return ele.hasOwnProperty(pre) && Boolean(ele[pre])
+  })
+  return result;
 }
 
-console.log("✨",truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
+console.log("✨",truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "role"));
