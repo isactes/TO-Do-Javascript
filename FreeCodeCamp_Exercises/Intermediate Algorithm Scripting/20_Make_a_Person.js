@@ -13,8 +13,35 @@ Run the tests to see the expected output for each method. These methods must be 
 */
 
 const Person = function(first, last) {
-  this.getFullName = function() {
-    return "";
+  const firstName = first;
+  const lastName  = last;
+
+  this.getFirstName = function() {
+    return firstName;
   };
-  return "";
+
+  this.getLastName = function() {
+    return lastName;
+  };
+
+  this.getFullName = function() {
+    return this.getFirstName() + " " + this.getLastName();
+  };
+
+  this.setFirstName = function(first) {
+    return firstName = first;
+  };
+
+  this.setLastName = function(last) {
+    return lastName = last;
+  };
+
+  this.setFullName = function(first, last) {
+    this.setFirstName(first);
+    this.setLastName(last);
+    return this.getFullName();
+  };
 };
+
+const bob = new Person("Isac", "Reno");
+console.log(bob.getFullName());
