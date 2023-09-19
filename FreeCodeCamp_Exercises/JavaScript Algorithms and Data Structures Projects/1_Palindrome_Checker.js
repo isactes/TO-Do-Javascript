@@ -13,9 +13,12 @@ We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3
 */
 
 function palindrome(str) {
-  const frase = str.split(" ").reverse().join("")
+  const replaceStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  
+  const frase = replaceStr.split('').reverse().join('');
 
-  return frase === str ? true : false;
+  return replaceStr === frase;
 }
 
-console.log("✨",palindrome("eye"));
+console.log("✨",palindrome("nope"));
+console.log("✨",palindrome("A man, a plan, a canal. Panama"));
