@@ -14,8 +14,23 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 
 */
 
+// The result its with Regular Expresion 
+
+//   1- ^ beginning of the string.
+//   2- (1\s?)? allows for "1" or "1 " if there is one.
+//   3- \d{n} checks for exactly n number of digits so \d{3}
+//   checks for three digits
+//   4. - x|y checks for either x or y so (\(\d{3}\)|\d{3}
+//   checks for either three digits surrounded by parentheses or three digits by themselves with no parentheses
+//   5. [\s\-]? checks for spaces or dashes between the groups of digits.
+//   6. $ end of the string
+
+
 function telephoneCheck(str) {
-  return true;
+  const regExpr = /^(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/
+
+  const result = regExpr.test(str)
+  return result;
 }
 
-console.log("✨",telephoneCheck("555-555-5555"));
+console.log("✨",telephoneCheck("55555555"));
