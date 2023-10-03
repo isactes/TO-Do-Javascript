@@ -88,10 +88,10 @@
       </p>
       <h3>Declaración de tipos de datos numéricos</h3>
       <script>
-        let edad = 35;
+        let edad1 = 35;
         const gravedad = 9.81; // usamos const para valores que no cambian, constante gravitacional en m/s2
         let masa = 72; // masa en Kilogramo
-        const PI = 3.14; // pi una constante geométrica
+        const PI1 = 3.14; // pi una constante geométrica
         // Más ejemplos
         const boilingPoint = 100; // temperatura en oC, punto de ebullición del agua que es una constante
         const bodyTemp = 37; // oC la temperatura corporal promedio del ser humano, que es una constante
@@ -165,7 +165,7 @@
         método random() que genera un número de 0 a 0.999999999...
       </p>
       <script>
-        let randomNum = Math.random(); // genera 0 a 0.999...
+        let randomNum1 = Math.random(); // genera 0 a 0.999...
       </script>
       <p>
         Ahora, veamos cómo podemos usar el método random() para generar un
@@ -188,13 +188,13 @@
         dobles o comillas invertidas. Veamos algunos ejemplos de cadenas:
       </p>
       <script>
-        let espacio = " "; // una cadena de espacio vacío
-        let primerNombre = "Asabeneh";
-        let apellido = "Yetayeh";
-        let pais = "Finland";
-        let ciudad = "Helsinki";
-        let idioma = "JavaScript";
-        let trabajo = "teacher";
+        let espacio1 = " "; // una cadena de espacio vacío
+        let primerNombre1 = "Asabeneh";
+        let apellido1 = "Yetayeh";
+        let pais1 = "Finland";
+        let ciudad1 = "Helsinki";
+        let idioma1 = "JavaScript";
+        let trabajo1 = "teacher";
         let cita = "The saying,'Seeing is Believing' is not correct in 2020.";
         let quotConBackTick = `The saying,'Seeing is Believing' is not correct in 2020.`;
       </script>
@@ -204,7 +204,7 @@
         las cadenas declaradas en la sección de Cadenas anterior:
       </p>
       <script>
-        let nombreCompleto = primerNombre + espacio + apellido; // concatenación, fusionando dos cadenas juntas.
+        let nombreCompleto1 = primerNombre + espacio + apellido; // concatenación, fusionando dos cadenas juntas.
         console.log(nombreCompleto);
         //  Asabeneh Yetayeh
       </script>
@@ -218,16 +218,16 @@
       </p>
       <script>
         // Declarar diferentes variables de diferentes tipos de datos
-        let espacio = " ";
-        let primerNombre = "Asabeneh";
-        let apellido = "Yetayeh";
-        let pais = "Finland";
-        let ciudad = "Helsinki";
-        let idioma = "JavaScript";
-        let trabajo = "teacher";
-        let edad = 250;
+        let espacio2 = " ";
+        let primerNombre2 = "Asabeneh";
+        let apellido2 = "Yetayeh";
+        let pais2 = "Finland";
+        let ciudad2 = "Helsinki";
+        let idioma2= "JavaScript";
+        let trabajo2 = "teacher";
+        let edad2 = 250;
 
-        let nombreCompleto = primerNombre + espacio + apellido;
+        let nombreCompleto2 = primerNombre + espacio + apellido;
         let datosPersonaUno =
           nombreCompleto + ". Yo tengo " + edad + ". Vivo en" + pais; // Adición de cadena ES5
 
@@ -235,6 +235,176 @@
         // Asabeneh Yetayeh. Yo tengo 250v Finland
       </script>
       <h3>Cadenas literales largas</h3>
+      <p>
+        Una cadena puede ser un solo caracter, un parrafo o una pagina. si la
+        longitud de las cadena es demasiado grande, no cabe en una linea.
+        podemos usar el caracter de barra invertida (\) al final de cada linea
+        para indicar que la cadena continuara en la linea siguiente Ejemplo:
+        <script>
+          const parrafo =
+              "Mi nombre es Asabeneh Yetayeh. Vivo en Finlandia, Helsinki.\
+              Soy profesora y me encanta enseñar. Enseño HTML, CSS, JavaScript, React, Redux, \
+              Node.js, Python, Data Analysis y D3.js para cualquier persona interesada en aprender. \
+              A fines de 2019, estaba pensando en expandir mi enseñanza y llegar a \
+              a la audiencia global y comencé un desafío de Python del 20 de noviembre al 19 de diciembre.\
+              Fue una de las experiencias más gratificantes e inspiradoras.\
+              Ahora, estamos en 2020. Disfruto preparando el desafío 30DaysOfJavaScript y \
+              Espero que tú también estés disfrutando.";
+          console.log(parrafo);
+        </script>
+      </p>
+
+      <h3>Secuencias de escape en cadenas</h3>
+      <p>
+        En JavaScript y otros lenguajes de programacion seguido de algunos caractres es una secuencia de escape. Veamos los caracteres de escape mas comunes:
+        -\n: nueva linea 
+        \t: Tabulador, significa 8 espacios
+        \\: barra invertida
+        \': Una frase (')
+        \": comillas dobles (")
+
+        <script>
+          console.log(
+            "Espero que todos estén disfrutando el desafío de 30 días de JavaScript.¿Y tú?"
+          ); // salto de línea
+          console.log("Días\temasEjercicios");
+          console.log("Día 1\t3\t5");
+          console.log("Día 2\t3\t5");
+          console.log("Día 3\t3\t5");
+          console.log("Día 4\t3\t5");
+          console.log("Este es un símbolo de barra invertida (\\)"); // Para escribir una barra invertida
+          console.log(
+            'En todos los lenguajes de programación comienza con "¡Hola, mundo!"'
+          );
+          console.log(
+            "En todos los lenguajes de programación comienza con '¡Hola, mundo!'"
+          );
+          console.log("El dicho 'Ver para creer' no es correcto en 2022");
+        </script>
+        <h4>Salida de consola</h4>
+      <p>
+        Espero que todos estén disfrutando el desafío de 30 días de JavaScript.
+        ¿Y tú?
+
+        Días temas Ejercicios
+        Día 1 3 5
+        Día 2 3 5
+        Día 3 3 5
+        Día 4 3 5
+        Este es un símbolo de barra invertida (\)
+        En todos los lenguajes de programación comienza con"¡Hola, mundo!"
+        En todos los lenguajes de programación comienza con"¡Hola, mundo!"
+        El dicho 'Ver para creer' no es correcto en 2022
+      </p>
+      </p>
+      <h3>Literales de plantilla</h3>
+      <p>
+        Para crear una p´lantilla de cadenas(cadenas de plantilla) usamos dos tildes de retroceso. Podemos inyectar datos como expresiones dentro de una cadena de plantilla. Para inyectar datos, encerramos las expresion con un corchete({}) precedido por un signo de $. Consulte la sintaxis a continuacion:
+        <span>
+          //Sintaxis
+          `Texto literal de cadena``Cadena de texto literal ${expresión}`;
+        </span>
+        <span>Ejemplo 1</span>
+        <script>
+          console.log(`La suma de 2 y 3 es 5`); // escribiendo estáticamente los datos
+          let a1 = 2;
+          let b1= 3;
+          console.log(`La suma de ${a1} y ${b1} es ${a1 + b1}`); // inyectando los datos dinámicamente
+        </script>
+        <span>Ejemplo 2</span>
+        <script>
+            let espacio = " ";
+            let primerNombre = "Asabeneh";
+            let apellido = "Yetayeh";
+            let pais = "Finland";
+            let ciudad = "Helsinki";
+            let idioma = "JavaScript";
+            let trabajo = "profesora";
+            let edad = 250;
+            let nombreCompleto = primerNombre + espacio + apellido;
+
+            let personaInfoDos = `Soy ${nombreCompleto}. Tengo ${edad} años. Vivo en ${pais}.`; //ES6 - Método de interpolación de cadenas
+            let personaInfoTres = `Soy ${nombreCompleto}. Vivo en ${ciudad}, ${pais}. Soy una ${trabajo}. Enseño ${idioma}.`;
+            console.log(personaInfoDos);
+            console.log(personaInfoTres);
+        </script>
+        <span>
+          Soy Asabeneh Yetayeh. Tengo 250 años. Vivo en  in Finland. Soy Asabeneh Yetayeh. Vivo en Helsinki, Finland. Soy una profesora. Enseño JavaScript.
+        </span>
+        <P>
+          uSANDO UNA PLANTILLA DE CADENA O UN METODO DE INTERPOLACION DE CADENA, PODEMOS AGREGAR EXPRECIONES, QUE PORDRIAN SER UN VALOR O ALGUNAS OPERACIONES(COMPARACION, OPERACIONES ARITMETICAS, OPERACIONES TERNARIAS)
+          <script>
+            let a = 2;
+            let b = 3;
+            console.log(`${a} es mayor que ${b}: ${a > b}`);
+          </script>
+          <span>2 es mayor que 3: false</span>
+        </P>
+      </p>
+      <h3>
+        Métodos de cadena
+      </h3>
+      <p>
+        Todo en Javascript es un objecto. una cadena es un tipo de datos primitivo, lo que significa que no podemos modificar una ves que se crea. El objecto de cadena tiene muchos metodos de cadena. Existen diferentes metodos de cadenas que nos pueden ayudar a trabajr con cadenas.
+        <ul>
+          <li>1: longitud: el metodo de caedna longitud devuelve el nuemro de caracteres en una de cadena incluido el espacio vacio</li>
+          <span>Example</span>
+          <script>
+            let js = "isactes"
+            console.log("✨", js.length) // 6
+            let firtsNombre = " isac"
+            console.log("✨", firtsNombre) // 4
+          </script>
+          <li>2: Acceder a los caracteres de una cadena: Podemos acceder a cada caracter de una cadena usando su indice. En programcion, el conteo comienza desde 0. El primer indice de la cadena es cero y el ultimo indice es la longitud de la cadena menos uno</li>
+          <img src="./Sin título.png" alt="">
+          <span>Accedamos a diferentes caracteres en la cadena Javascript</span>
+          <script>
+            let string1 = "JavaScript";
+            let firstLetter = string[0];
+
+            console.log(firstLetter); // J
+
+            let secondLetter = string[1]; // a
+            let thirdLetter = string[2];
+            let lastLetter = string[9];
+
+            console.log(lastLetter); // t
+
+            let lastIndex = string.length - 1;
+
+            console.log(lastIndex); // 9
+            console.log(string[lastIndex]); // t
+          </script>
+          <li>3: toUpperCase(): este metodo cambia la cadena a letras mayuscalas</li>
+          <script>
+            let string2 = "JavaScript";
+
+            console.log(string.toUpperCase()); // JAVASCRIPT
+
+            let firstName1 = "Asabeneh";
+
+            console.log(firstName.toUpperCase()); // ASABENEH
+
+            let country1 = "Finland";
+
+            console.log(country.toUpperCase()); // FINLAND
+          </script>
+          <li>4: toLowwerCase(): este metodo cambia la cadena a letras minusculas.</li>
+          <script>
+            let string = "JavasCript";
+
+            console.log(string.toLowerCase()); // javascript
+
+            let firstName = "Asabeneh";
+
+            console.log(firstName.toLowerCase()); // asabeneh
+
+            let country = "Finland";
+
+            console.log(country.toLowerCase()); // finland
+          </script>
+        </ul>
+      </p>
     </ul>
   </body>
 </html>
