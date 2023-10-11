@@ -403,6 +403,94 @@
 
             console.log(country.toLowerCase()); // finland
           </script>
+          <li>5: substr(): Se necesitan dos argumentos, el índice inicial y el número de caracteres para dividir.</li>
+          <script>
+            let string11 = "JavaScript";
+            console.log(string.substr(4, 6)); // Script
+
+            let country11 = "Finland";
+            console.log(country.substr(3, 4)); // land
+          </script>
+          <li>
+            6: substring(): Toma dos argumentos, el índice inicial y el índice final, pero no incluye el carácter en el índice final.
+          </li>
+          <script>
+            let string12 = "JavaScript";
+
+            console.log(string12.substring(0, 4)); // Java
+            console.log(string12.substring(4, 10)); // Script
+            console.log(string12.substring(4)); // Script
+
+            let country12 = "Finland";
+
+            console.log(country12.substring(0, 3)); // Fin
+            console.log(country12.substring(3, 7)); // land
+            console.log(country12.substring(3)); // land
+          </script>
+          <li>
+            7: split(): El método split divide una cadena en un lugar específico.
+          </li>
+          <script>
+            let string13 = "30 Days Of JavaScript";
+
+            console.log(string13.split()); // Cambios en una matriz -> ["30 Days Of JavaScript"]
+            console.log(string13.split(" ")); // Dividir a una matriz en el espacio -> ["30", "Days", "Of", "JavaScript"]
+
+            let firstName13 = "Asabeneh";
+
+            console.log(firstName13.split()); // Cambiar a una matriz - > ["Asabeneh"]
+            console.log(firstName13.split("")); // Dividir en una matriz en cada letra ->  ["A", "s", "a", "b", "e", "n", "e", "h"]
+
+            let countries13 = "Finland, Sweden, Norway, Denmark, and Iceland";
+
+            console.log(countries13.split(",")); // Dividir en cualquier matriz en coma -> ["Finland", " Sweden", " Norway", " Denmark", " and Iceland"]
+            console.log(countries13.split(", ")); //  ["Finland", "Sweden", "Norway", "Denmark", "and Iceland"]
+          </script>
+          <li>
+            8: trim(): Elimina el espacio final al principio o al final de una cadena.
+          </li>
+          <script>
+            let string123 = "   30 Days Of JavaScript   ";
+
+            console.log(string123);
+            console.log(string123.trim(" "));
+
+            let firstName123 = " Asabeneh ";
+
+            console.log(firstName123);
+            console.log(firstName123.trim()); // todavía elimina espacios al principio y al final de la cadena
+          </script>
+          <li>
+            9: includes(): Toma un argumento de subcadena y verifica si existe un argumento de subcadena en la cadena. includes() devuelve un valor booleano. Si existe una subcadena en una cadena, devuelve verdadero; de lo contrario, devuelve falso.
+          </li>
+          <script>
+            let string1212 = "30 Days Of JavaScript";
+
+          console.log(string1212.includes("Days")); // verdadero
+          console.log(string1212.includes("days")); // falso: ¡se distingue entre mayúsculas y minúsculas!
+          console.log(string1212.includes("Script")); // verdadero
+          console.log(string12.includes("script")); // falso
+          console.log(string1212.includes("java")); // falso
+          console.log(string1212.includes("Java")); // verdadero
+
+          let country1212 = "Finland";
+
+          console.log(country1212.includes("fin")); // falso
+          console.log(country1212.includes("Fin")); // verdadero
+          console.log(country1212.includes("land")); // verdadero
+          console.log(country1212.includes("Land")); // falso
+          </script>
+          <li>
+            10: replace(): toma como parámetro la subcadena antigua y una nueva subcadena.
+          </li>
+          <script>
+            string.replace(oldsubstring, newsubstring);
+            let string1233 = "30 Days Of JavaScript";
+            console.log(string1233.replace("JavaScript", "Python")); // 30 Days Of Python
+
+            let country1233 = "Finland";
+            console.log(country1233.replace("Fin", "Noman")); // Nomanland
+          </script>
         </ul>
       </p>
     </ul>
