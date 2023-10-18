@@ -62,3 +62,66 @@ const mockSplit10 = "30 días de JavaScript"
 console.log("✨ 10. Ejercicio: ⚒", mockSplit10.split(" ")) // Dividir a una matriz en el espacio
 
 // 11. 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' divide la cadena en la coma y cámbiala a una matriz. Se utiliza split(ve ejemplos)
+
+const mockSocials = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
+
+console.log("✨ 11. Ejercicio: ⚒", mockSocials.split(", "))
+
+// 12. Cambie 30 días de JavaScript a 30 días de Python usando el método replace().
+
+const mockReplace = "30 días de JavaScript";
+
+console.log("✨ 12. Ejercicio: ⚒", mockReplace.replace("JavaScript", "Python"))
+
+// 13. ¿Qué es el carácter en el índice 15 en la cadena '30 días de JavaScript'? Utilice el método charAt().
+
+const mockCharAt = "30 días de JavaScript";
+
+console.log("✨ 13. Ejercicio: ⚒", mockCharAt.charAt(15))
+
+// 14. ¿Cuál es el código de carácter de J en la cadena '30 días de JavaScript' usando charCodeAt()
+
+const mockCharCodeAt = "30 días de JavaScript";
+
+console.log("✨ 14. Ejercicio: ⚒", mockCharCodeAt.charCodeAt(15)) // primer intento 
+console.log("✨ 14. Ejercicio: ⚒", mockCharCodeAt.charCodeAt(11)) //  correcion 
+
+// 15. Use indexOf para determinar la posición de la primera aparición de a en 30 días de JavaScript
+
+const mockIndex = "30 Days Of JavaScript";
+
+console.log("✨ 15. Ejercicio: ⚒", mockIndex.indexOf("a"))
+
+
+// 16. Utilice lastIndexOf para determinar la posición de la última aparición de a en 30 días de JavaScript.
+
+const mockLastIndex = "30 Days Of JavaScript";
+
+console.log("✨ 16. Ejercicio: ⚒", mockLastIndex.lastIndexOf("a"))
+
+// 17. Usa indexOf para encontrar la posición de la primera aparición de la palabra porque en la siguiente oración:'No puedes terminar una oración con porque porque porque es una conjunción'
+
+const mockIndex1 = "No puedes terminar una oración con porque porque porque es una conjunción"
+
+console.log("✨ 17. Ejercicio: ⚒", mockIndex1.indexOf("porque"))
+
+// 18. Usa lastIndexOf para encontrar la posición de la última aparición de la palabra porque en la siguiente oración:'No puedes terminar una oración con porque porque porque es una conjunción'
+
+const mockLastIndex1 = "No puedes terminar una oración con porque porque porque es una conjunción";
+
+console.log("✨ 18. Ejercicio: ⚒", mockLastIndex1.lastIndexOf("porque"))
+
+// 19. Usa buscar para encontrar la posición de la primera aparición de la palabra porque en la siguiente oración:'No puedes terminar una oración con porque porque porque es una conjunción'
+
+const mockFind = "No puedes terminar una oración con porque porque porque es una conjunción"
+const finWord = /porque/gi
+console.log("✨ 19. Ejercicio: ⚒", mockFind.match(finWord))
+
+// 20. Use trim() para eliminar cualquier espacio en blanco final al principio y al final de una cadena. Por ejemplo, '30 días de JavaScript'.
+
+const mockTrim = "30 días de JavaScript"
+
+console.log("✨ 20. Ejercicio: ⚒", mockTrim.trim(" "))
+console.log("✨ 20. Ejercicio: ⚒", mockTrim.trim())
+
+// 21. Use el método startsWith() con la cadena 30 días de JavaScript y haga que el resultado sea verdadero
