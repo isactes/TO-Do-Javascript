@@ -125,3 +125,35 @@ console.log("✨ 20. Ejercicio: ⚒", mockTrim.trim(" "))
 console.log("✨ 20. Ejercicio: ⚒", mockTrim.trim())
 
 // 21. Use el método startsWith() con la cadena 30 días de JavaScript y haga que el resultado sea verdadero
+
+const mockStarWith = "30 días de JavaScript"
+
+console.log("✨ 21. Ejercicio: ⚒", mockStarWith.startsWith("30 días de JavaScript"))
+
+// 22. Use el método endsWith() con la cadena 30 días de JavaScript y haga que el resultado sea verdadero
+
+const mockEndsWith = "30 días de JavaScript"
+
+console.log("✨ 20. Ejercicio: ⚒", mockEndsWith.endsWith("30 días de JavaScript"))
+
+//23. Usa el método match() para encontrar todos los a en 30 días de JavaScript
+
+const mockMacth = "30 días de JavaScript"
+const macthMock = /a/gi
+
+console.log("✨ 23. Ejercicio ⚒", mockMacth.match(macthMock))
+
+// 24. Use concat() y fusione '30 días de' y 'JavaScript' en una sola cadena, '30 días de JavaScript'
+
+const mockConcat1 = "30 días de "
+const mockConcat2 = "JavaScript"
+
+console.log("✨ 24. Ejercicio ⚒", mockConcat1.concat(mockConcat2))
+
+// 25. Use el método repeat() para imprimir 30 días de JavaScript 2 veces
+
+const repeatMock = "30 días de JavaScript, "
+
+console.log("✨ 25. Ejercicio ⚒", repeatMock.repeat(2))
+
+// Ejercicio: Nivel 2
