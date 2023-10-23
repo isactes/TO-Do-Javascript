@@ -8,12 +8,13 @@
 
 2. **Clona el Repositorio**: Clona el repositorio desde tu cuenta de GitHub a tu máquina local utilizando el comando:
 
- * https://github.com/isactes/TO-Do-Javascript.git
+ * git clone url de tu Repositorio
 
 
 3. **Crea una Rama**: Crea una nueva rama en tu repositorio local para tu contribución utilizando un nombre descriptivo, por ejemplo:
 
-git checkout -b nueva-contribucion
+ *  nueva-contribucion con el comando 
+ * git checkout -b nueva-contribucion
 
 
 4. **Realiza tu Contribución**: Agrega tus ejercicios, proyectos, documentación o cualquier otra mejora al repositorio. Asegúrate de seguir las guías de estilo y las buenas prácticas del lenguaje de programación JavaScript.
