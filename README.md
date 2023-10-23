@@ -26,6 +26,3 @@ Este repositorio se actualiza diariamente 📅, por lo que asegúrate de marcarl
 
 ¡Gracias por visitar este repositorio y esperamos que te ayude a alcanzar tus metas de programación en JavaScript! 👏
 
----
-
-**Nota**: Este es un ejemplo con iconos y emojis para hacer que el README.md sea más atractivo visualmente. Puedes personalizarlo aún más según tus preferencias y estilo.
