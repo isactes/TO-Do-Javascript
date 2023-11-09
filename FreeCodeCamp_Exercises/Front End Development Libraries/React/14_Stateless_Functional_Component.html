@@ -28,31 +28,33 @@
   it as an argument to a function which returns JSX. You can access the value of the argument in the function body. With
   class components, you will see this is a little different.
   </p>
-  const CurrentDate = (props) => {
-  return (
-  <div>
-    { /* Change code below this line */ }
-    <p>The current date is: { props.date} </p>
-    { /* Change code above this line */ }
-  </div>
-  );
-  };
+  <script>
+    const CurrentDate = (props) => {
+      return (
+        <div>
+          { /* Change code below this line */}
+          <p>The current date is: {props.date} </p>
+          { /* Change code above this line */}
+        </div>
+      );
+    };
 
-  class Calendar extends React.Component {
-  constructor(props) {
-  super(props);
-  }
-  render() {
-  return (
-  <div>
-    <h3>What date is it?</h3>
-    { /* Change code below this line */ }
-    <CurrentDate date={Date()} />
-    { /* Change code above this line */ }
-  </div>
-  );
-  }
-  };
+    class Calendar extends React.Component {
+      constructor(props) {
+        super(props);
+      }
+      render() {
+        return (
+          <div>
+            <h3>What date is it?</h3>
+            { /* Change code below this line */}
+            <CurrentDate date={Date()} />
+            { /* Change code above this line */}
+          </div>
+        );
+      }
+    };
+  </script>
 </body>
 
 </html>
