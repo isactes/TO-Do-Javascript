@@ -157,3 +157,61 @@ const repeatMock = "30 días de JavaScript, "
 console.log("✨ 25. Ejercicio ⚒", repeatMock.repeat(2))
 
 // Ejercicio: Nivel 2
+
+// 1. Usando console.log() imprima la siguiente declaración:
+
+console.log(`The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.`)
+
+// 2. Usando console.log() imprima la siguiente cita de la Madre Teresa:
+
+console.log("Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead.")
+
+// 3. Compruebe si typeof '10' es exactamente igual a 10. Si no, hágalo exactamente igual.
+
+if (typeof "10" === typeof 10) {
+  console.log("Es lo mismo")
+} else {
+  console.log("No es lo mismo")
+}
+ // 4. Compruebe si parseFloat('9.8') es igual a 10, si no, hágalo exactamente igual a 10.
+
+ let num = "9.81";
+let numFloat = parseFloat(num);
+
+if (numFloat === typeof 10) {
+    console.log("si es lo mismo")
+} else {
+  console.log("No es lo mismo")
+}
+
+console.log(numFloat); // 9.81
+
+// 5. Verifique si 'on' se encuentra tanto en Python como en la jerga
+
+const textPyton = "Python"
+const textJerga = "Jerga"
+
+if (textPyton.includes("on") && textJerga.includes("on")) {
+  console.log("lo encluye en los dos")
+} else {
+  console.log("no lo incluye en los dos")
+}
+
+
+// 6. Espero que este curso no esté lleno de jerga. Compruebe si jargon está en la oración.
+
+const textJergas = "jerga"
+const textJargon = "jargon"
+
+if (textJargon.includes(textJergas)) {
+  console.log("si lo incluye")
+} else {
+  console.log("no lo incluye")
+}
+
+
+// 7. Genere un número aleatorio entre 0 y 100 inclusive.
+
+const numG = Math.floor(Math.random() * 100)
+
+console.log("✨", numG)
