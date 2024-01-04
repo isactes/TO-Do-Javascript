@@ -1,13 +1,8 @@
-const fetch = require('node-fetch')
-const config = require('../../../config')
+import { apiQouteRamdom } from "../../../config.js"
 
-
-const fetch = require('node-fetch');
-const config = require('../../../config');
-
-async function Ramdom_Qoute_url() {
+async function RamdomQouteUrl() {
   try {
-    const ramdomQouteurl = config.apiQouteRamdom.uri;
+    const ramdomQouteurl = apiQouteRamdom.uri;
     const options = {
       method: 'GET',
       headers: { Accept: 'application/json' }
@@ -28,4 +23,4 @@ async function Ramdom_Qoute_url() {
   }
 }
 
-module.exports = { Ramdom_Qoute_url }
+export default RamdomQouteUrl

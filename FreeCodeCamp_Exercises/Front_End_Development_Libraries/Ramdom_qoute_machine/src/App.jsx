@@ -1,16 +1,40 @@
-// import { useState } from 'react'
-// import './App.css'
-
+import { useEffect, useState } from 'react'
+import CardQoute from "./components/card/card"
+import RamdomQouteUrl from "./api/ramdomQouteMachine/ramdomQouteMAchine"
+// import { repostQoute } from '../config'
 function App() {
+
+  const [qoute, setQoute ] =  useState(null)
+
+  useEffect(() => {
+    ramdomQouteMachine()
+  },  [])
+
+  const ramdomQouteMachine = async() => {
+    try {
+      const data =  await RamdomQouteUrl()
+      setQoute(data)
+    } catch (error) {
+      console.error("And error fetching 💀💀", error)
+      
+    }
+  }
+
+  const handleQouteRamdon = async() => {
+    await ramdomQouteMachine()
+  }
 
   return (
     <>
-      <div id="quote-box">
-        <p id="text">text</p>
-        <p id="author">author</p>
-        <button id="new-quote">new-quote</button>
-        <a id="tweet-quote"></a>
-      </div>
+    <div className="container mx-auto">
+      {qoute && (
+        <CardQoute
+        author={qoute.author}
+        text={qoute.content}
+        newQoute={handleQouteRamdon}
+        />
+      )}
+    </div>
     </>
   )
 }
