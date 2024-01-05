@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import CardQoute from "./components/card/card"
 import RamdomQouteUrl from "./api/ramdomQouteMachine/ramdomQouteMAchine"
-// import { repostQoute } from '../config'
 function App() {
 
   const [qoute, setQoute ] =  useState(null)
@@ -26,7 +25,7 @@ function App() {
 
   return (
     <>
-    <div className="container mx-auto">
+    <div className="flex justify-center container mx-auto">
       {qoute && (
         <CardQoute
         author={qoute.author}
