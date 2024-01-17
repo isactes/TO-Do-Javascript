@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import TitleOfProyect from "./components/titles/titleHone";
 import Head from "./components/head/Head";
 import TextArea from "./components/textArea/textArea";
 import Previewer from "./components/preview/Preview";
 import { sampleText } from "./sampleText";
+import "./App.css";
 
 function App() {
 
@@ -21,19 +21,21 @@ function App() {
       <TitleOfProyect
       title="Build a Markdown Previewer"
       />
-      <div className={``}>
+      <div className="bg-moon-overlay">
         <Head 
         setTab={(tab) =>{
           setCurrenTab(tab)
         }}
         />
-        <div className="">
+        <div className="w-screen min-h-screen grid grid-flow-col">
           <div className={`${ currenTab !== 'editor' && 'hidden'} landscape:block landscape:w-[50vw]`}>
             <TextArea 
             setcode={(code) => {
               setCurrenCode(code)
             }}
+            currentCode={currentCode}
             />
+            <br/>
           </div>
           <div className={`${ currenTab !== 'Previewer' && 'hidden'} landscape:block`}>
             <Previewer code={currentCode}/>

@@ -20,10 +20,10 @@ function Head({ setTab }) {
       }}
       >
         <i 
-        className={`text-2xl nf nf-md-toggle_switch${currenTab === "editor" ? "_off" : ""}`} 
+        className={`text-2xl nf nf-md-toggle_switch${currenTab === "editor" ? "_off" : ''}`} 
         />
       </button>
-      <h2 className="font-bold m-0 border-none hidden landscape:block">editor</h2>
+      <h2 className="font-bold m-0 border-none hidden landscape:block">Editor</h2>
       <h2 className="font-bold m-0 border-none hidden landscape:block">Previewer</h2>
 
     </div>
