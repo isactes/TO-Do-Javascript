@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {},
   },
+  // presets: [require('./src/colorScheme')],
   plugins: [require("tw-elements/dist/plugin.cjs")],
   darkMode: "class"
 }
