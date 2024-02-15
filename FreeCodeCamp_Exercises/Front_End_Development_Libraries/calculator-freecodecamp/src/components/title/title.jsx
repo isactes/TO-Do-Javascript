@@ -11,7 +11,7 @@ function Title({ title, authorName, made, date}) {
     </>
   )}
 
-Title.propType = {
+Title.propTypes = {
   title: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
   made: PropTypes.string.isRequired,

@@ -11,7 +11,7 @@ function ButtonNumber({number}) {
     </button>
   )}
 
-ButtonNumber.propType = {
+ButtonNumber.propTypes = {
   number: PropTypes.number.isRequired
 }
 
