@@ -33,6 +33,17 @@ const numberCalcu = [
 
 const symbolCalcu = [
   {
-    
+    simbole: "/"
   },
+  {
+    simbole: "X"
+  },
+  {
+    simbole: "+"
+  },
+  {
+    simbole: "-"
+  }
 ]
+
+export { numberCalcu, symbolCalcu}
