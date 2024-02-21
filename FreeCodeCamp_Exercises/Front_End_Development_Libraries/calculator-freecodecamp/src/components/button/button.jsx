@@ -1,18 +1,23 @@
 import PropTypes from "prop-types"
-function ButtonNumber({number}) {
-  return(
+function ButtonNumber({ number, id, simbol }) {
+  return (
     <button
-    type="button"
-    className="inline-block rounded-l bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 focus:bg-primary-600 focus:outline-none focus:ring-0 active:bg-primary-700"
-    data-te-ripple-init
-    data-te-ripple-color="light"
+      id={id}
+      type="button"
+      className="m-auto h-auto w-fit"
+      data-te-ripple-init
+      data-te-ripple-color="light"
     >
-    {number}
+      {number}
+      {simbol}
     </button>
-  )}
+  )
+}
 
 ButtonNumber.propTypes = {
-  number: PropTypes.number.isRequired
+  number: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  simbol: PropTypes.string.isRequired
 }
 
 export default ButtonNumber
