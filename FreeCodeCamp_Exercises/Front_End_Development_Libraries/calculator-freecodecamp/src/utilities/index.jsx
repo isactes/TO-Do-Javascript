@@ -47,7 +47,7 @@ const symbolCalcu = [
     id: "divide"
   },
   {
-    simbole: "X",
+    simbole: "x",
     id: "multiply"
   },
   {
@@ -57,19 +57,9 @@ const symbolCalcu = [
   {
     simbole: "-", 
     id: "subtract"
-  },
-  {
-    simbole: "CE", 
-    id: "subtract"
-  },
-  {
-    simbole: "C", 
-    id: "subtract"
-  },
-  {
-    simbole: "%", 
-    id: "subtract"
-  },
+  }
 ]
 
-export { numberCalcu, symbolCalcu}
+
+
+export { numberCalcu, symbolCalcu }
