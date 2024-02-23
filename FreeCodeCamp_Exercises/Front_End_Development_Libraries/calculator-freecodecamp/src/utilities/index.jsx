@@ -41,35 +41,5 @@ const numberCalcu = [
   }
 ]
 
-const symbolCalcu = [
-  {
-    simbole: "/",
-    id: "divide"
-  },
-  {
-    simbole: "X",
-    id: "multiply"
-  },
-  {
-    simbole: "+",
-    id: "add"
-  },
-  {
-    simbole: "-", 
-    id: "subtract"
-  },
-  {
-    simbole: "CE", 
-    id: "subtract"
-  },
-  {
-    simbole: "C", 
-    id: "subtract"
-  },
-  {
-    simbole: "%", 
-    id: "subtract"
-  },
-]
 
-export { numberCalcu, symbolCalcu}
+export { numberCalcu }
