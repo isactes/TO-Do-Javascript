@@ -15,8 +15,8 @@ function ButtonNumber({ number, id, onClick }) {
 }
 
 ButtonNumber.propTypes = {
-  number: PropTypes.number,
   id: PropTypes.string.isRequired,
+  number: PropTypes.number,
   onClick: PropTypes.func.isRequired
 }
 

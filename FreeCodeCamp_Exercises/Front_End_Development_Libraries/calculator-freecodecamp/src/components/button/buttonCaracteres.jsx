@@ -16,8 +16,8 @@ function ButtonCaracteres({ caracter, id, onClick }) {
 }
 
 ButtonCaracteres.propTypes = {
-  caracter: PropTypes.any.isRequired,
   id: PropTypes.string.isRequired,
+  caracter: PropTypes.any.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
