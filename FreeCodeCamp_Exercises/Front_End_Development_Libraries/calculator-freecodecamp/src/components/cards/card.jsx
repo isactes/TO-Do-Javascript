@@ -22,7 +22,9 @@ function Card() {
 
   const handleOperator = (value) => {
     setOperator(value);
-    setPreviousValue(result);
+    if (result !== "0") {
+      setPreviousValue(result);
+    }
     setResult("0")
   }
 
@@ -61,15 +63,18 @@ function Card() {
     setPreviousValue(null);
   }
 
-  const handlePosNeg = () => {
-    setResult(`${parseFloat(result) * 0.01}`)
+  const handlePoint = () => {
+    if (!result.includes(".")) {
+      
+      setResult(`${result}`)
+    }
   }
 
 
   return (
     <div className="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
       <AreaText
-        id=""
+        id="display"
         caracteres={result}
         key=""
       />
@@ -93,7 +98,7 @@ function Card() {
         <ButtonCaracteres
           id="equals"
           key={"equals"}
-          onClick={() => handleEqual("=")}
+          onClick={handleEqual}
           caracter={"="}
         />
         <ButtonCaracteres
@@ -105,7 +110,7 @@ function Card() {
         <ButtonCaracteres
           id="decimal"
           key={"decimal"}
-          onClick={() => handlePosNeg(".")}
+          onClick={() => handlePoint(".")}
           caracter={"."}
         />
       </div>
