@@ -1,11 +1,21 @@
+import { useState } from "react";
 import Navbar from "./components/nav/nav";
 import FooterMain from "./components/footer/footer";
 import "./App.css";
+import SideNavar from "./components/sidenava/SideNav";
 
 function App() {
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+
+  const toggleSideNav = () => {
+    setIsSideNavOpen(!isSideNavOpen);
+  };
+
+
   return (
     <>
-      <Navbar />
+      <Navbar toggleSideNav={toggleSideNav}/>
+      <SideNavar  isSideNavOpen={isSideNavOpen}/>
       <div className="">
         <h1>Tutorial de JavaScript Moderno</h1>
         <h3>Tabla de contenidos</h3>
