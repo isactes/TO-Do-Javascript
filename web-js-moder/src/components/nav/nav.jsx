@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { namesNavar } from "../../utilities";
 function Navbar({ toggleSideNav }) {
   return (
@@ -102,6 +103,10 @@ function Navbar({ toggleSideNav }) {
       </nav>
     </>
   );
+}
+
+Navbar.propTypes  = {
+  toggleSideNav: PropTypes.func.isRequired
 }
 
 export default Navbar

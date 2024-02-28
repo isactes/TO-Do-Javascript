@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar toggleSideNav={toggleSideNav}/>
-      <SideNavar  isSideNavOpen={isSideNavOpen}/>
+      <SideNavar  isSideNavOpen={isSideNavOpen} toggleSideNav={toggleSideNav}/>
       <div className="">
         <h1>Tutorial de JavaScript Moderno</h1>
         <h3>Tabla de contenidos</h3>
