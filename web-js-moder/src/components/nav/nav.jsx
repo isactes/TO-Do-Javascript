@@ -1,5 +1,6 @@
+import PropTypes from "prop-types"
 import { namesNavar } from "../../utilities";
-function Navbar() {
+function Navbar({ toggleSideNav }) {
   return (
     <>
       <nav
@@ -30,6 +31,7 @@ function Navbar() {
             aria-controls="navbarSupportedContent4"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleSideNav}
           >
             {/* Hamburger icon */}
             <span className="[&>svg]:w-7">
@@ -47,7 +49,6 @@ function Navbar() {
               </svg>
             </span>
           </button>
-
           {/* Collapsible navbar container */}
           <div
             className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
@@ -102,6 +103,10 @@ function Navbar() {
       </nav>
     </>
   );
+}
+
+Navbar.propTypes  = {
+  toggleSideNav: PropTypes.func.isRequired
 }
 
 export default Navbar
