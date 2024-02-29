@@ -1,5 +1,6 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import { namesNavar } from "../../utilities";
+import Heading from "../heading/heading";
 function Navbar({ toggleSideNav }) {
   return (
     <>
@@ -16,7 +17,7 @@ function Navbar({ toggleSideNav }) {
               <img
                 className="mr-2"
                 src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp"
-                style={{height: 20}}
+                style={{ height: 20 }}
                 alt="TE Logo"
                 loading="lazy"
               />
@@ -66,15 +67,15 @@ function Navbar({ toggleSideNav }) {
                 data-te-nav-item-ref
               >
                 {namesNavar.map((navs) => (
-                <a
-                  className="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                  aria-current="page"
-                  href="#"
-                  data-te-nav-link-ref
-                  key={navs.id}
-                >
-                  {navs.nav}
-                </a>
+                  <a
+                    className="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                    aria-current="page"
+                    href="#"
+                    data-te-nav-link-ref
+                    key={navs.id}
+                  >
+                    {navs.nav}
+                  </a>
                 ))}
               </li>
             </ul>
@@ -84,7 +85,7 @@ function Navbar({ toggleSideNav }) {
                 data-te-nav-link-ref
                 data-te-ripple-color="light"
                 className="mr-3 inline-block rounded px-3 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg motion-reduce:transition-none"
-                style={{background: '#333'}}
+                style={{ background: "#333" }}
                 href="https://github.com/isactes/"
                 target="_blank"
               >
@@ -101,12 +102,13 @@ function Navbar({ toggleSideNav }) {
           </div>
         </div>
       </nav>
+      <Heading />
     </>
   );
 }
 
-Navbar.propTypes  = {
-  toggleSideNav: PropTypes.func.isRequired
-}
+Navbar.propTypes = {
+  toggleSideNav: PropTypes.func.isRequired,
+};
 
-export default Navbar
+export default Navbar;

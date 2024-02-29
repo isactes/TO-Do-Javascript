@@ -1,27 +1,24 @@
 const namesNavar = [
   {
-    id: "1",
-    nav: "Isactes",
-    navUrl: "",
-    iconXml: "http://www.w3.org/2000/svg"
-  },
-  {
     id: "2",
     nav: "Parte 1",
     navUrl: "",
-    iconXml: "http://www.w3.org/2000/svg"
+    iconXml: "http://www.w3.org/2000/svg",
+    title: "El lenguaje JavaScript"
   },
   {
     id: "3",
     nav: "Parte 2",
     navUrl: "",
-    iconXml: "http://www.w3.org/2000/svg"
+    iconXml: "http://www.w3.org/2000/svg",
+    title: "El navegador: Documentos, Eventos e Interfas"
   },
   {
     id: "4",
     nav: "Parte 3",
     navUrl: "",
-    iconXml: "http://www.w3.org/2000/svg"
+    iconXml: "http://www.w3.org/2000/svg",
+    title: "Articulos adicionales"
   },
 ];
 
