@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/nav/nav";
 import FooterMain from "../components/footer/footer";
 import SideNavar from "../components/sidenava/SideNav";
+import PageHome from "../pages/home/home";
 import { namesNavar } from "../utilities";
 
 function WebClone() {
@@ -51,28 +52,8 @@ function WebClone() {
           ))}
         </div>
       </div>
-      <section className="m-10">
-        <div className="max-w-screen-md m-0 box-border">
-          <div className="">
-            <h2 className="my-6 text-lg leading-7 text-slate-200 font-bold">
-              El lenguaje JavaScript
-            </h2>
-          </div>
-          <div className="max-w-3xl my-6 text-sm text-slate-300 font-medium">
-            <p>
-            Aquí aprenderemos JavaScript, empezando desde cero y llegaremos
-            hasta conceptos avanzados como POO. Nos concentraremos en el
-            lenguaje mismo con el mínimo de notas específicas del entorno.
-            </p>
-          </div>
-          <div className="list ">
-            <div className="list_items ">
-
-            </div>
-          </div>
-        </div>
-      </section>
-      <FooterMain />
+      <PageHome/>
+      {/* <FooterMain /> */}
     </>
   );
 }
