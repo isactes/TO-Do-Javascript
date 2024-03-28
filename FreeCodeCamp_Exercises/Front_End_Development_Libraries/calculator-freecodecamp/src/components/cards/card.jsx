@@ -8,74 +8,87 @@ import AreaText from "../textArea/TextArea"
 
 function Card() {
 
-  const [display, setDisplay] = useState("0")
-  const [operator, setOperator] = useState('')
-  const [previousValue, setPreviousValue] = useState('')
+  const [ answer, setAnswer] = useState("");
+  const [ expression, setExpression ] = useState("")
+  const toString = expression.trim();
 
-  const handleNumber = (value) => {
-    if (display === "0") {
-      setDisplay(`${value}`)
+  const isOperator = (symbol) => {
+    return /[*/+-]/.test(symbol);
+  }
+
+  const calculate = () => {
+    if(isOperator(toString.charAt(toString.length -1))) return;
+
+    const parts = toString.split(" ");
+    const newParts = []
+    
+    for (let i = parts.length -1 ; i >= 0; i--) {
+      if(["*", "/", "+"].includes(parts[i]) && isOperator(parts[i - 1])){
+        newParts.unshift(parts[i]);
+        let j = 0;
+        let k = i -1;
+        while(isOperator(parts[k])){
+          k--;
+          j++;
+        }
+        i -= j;
+      } else {
+        newParts.unshift(parts[i])
+      }
+    }
+    const newExpression = newParts.join(" ");
+    if(isOperator(newExpression.charAt(0))){
+      setAnswer(eval(answer + newExpression));
     } else {
-      setDisplay(`${display}${value}`)
+      setAnswer(eval(newExpression));
     }
+    setExpression("")
   }
 
-  const handleOperator = (value) => {
-    setOperator(value);
-    if (display !== "0") {
-      setPreviousValue(display);
-    } 
-    setDisplay("0")
-  }
-
-  const handleEqual = () => {
-  const current = parseFloat(display);
-  const previous = parseFloat(previousValue);
-  let newResult;
-
-  switch (operator) {
-    case "+":
-      newResult = previous + current;
-      break;
-    case "-":
-      newResult = previous - current;
-      break;
-    case "x":
-      newResult = previous * current;
-      break;
-    case "/":
-      newResult = previous / current;
-      break;
-    default:
-      newResult = parseFloat(display);
-      break;
-  }
-
-  setDisplay(newResult.toString());
-  setOperator(null);
-  setPreviousValue(null);
-};
-
-
-  const handleClear = () => {
-    setDisplay("0");
-    setOperator(null);
-    setPreviousValue(null);
-  }
-
-  const handlePoint = () => {
-    if (!display.includes(".")) {
-      setDisplay(`${display}.`)
+  const handleOperator = (symbol) => {
+    if(symbol === "C"){
+      setAnswer("");
+      setExpression("0")
+    } else if (symbol === "negative") {
+      if (answer === "") return;
+      setAnswer(
+        answer.toString().charAt(0) === "-" ? answer.slice(1) : "-" + answer
+      );
+    } else if (symbol === "%"){
+      if(answer === "") return;
+      setAnswer((parseFloat(answer) / 100).toString())
+    } else if (isOperator(symbol)){
+      setExpression(toString + " " + symbol + " ");
+    } else if(symbol === "="){
+      calculate();
+    } else if (symbol === "0") {
+      if(expression.charAt(0) !== "0"){
+        setExpression(expression + symbol)
+      }
+    } else if(symbol === "."){
+      const lastNumber = expression.split(/[-+/*]/g).pop();
+      if(!lastNumber) return;
+      console.log("⚒️ lasNumber", lastNumber);
+      if(lastNumber?.includes(".")) return;
+      setExpression(expression + symbol)
+    } else {
+      if(expression.charAt(0) === "0"){
+        setExpression(expression.slice(1) + symbol);
+      } else {
+        setExpression(expression + symbol)
+      }
     }
-  }
+  };
+  
 
 
   return (
     <div className="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
       <AreaText
         id="display"
-        caracteres={display}
         key="display"
+        answer={answer}
+        expression={expression}
       />
       <div className="grid grid-cols-3 gap-2">
         {numberCalcu.map(number => (
@@ -83,7 +96,7 @@ function Card() {
             id={number.id}
             key={number.id}
             number={number.number}
-            onClick={() => handleNumber(number.number)}
+            onClick={() => handleOperator(number.number)}
           />
         ))}
         {symbolCalcu.map(simbol => (
@@ -97,20 +110,32 @@ function Card() {
         <ButtonCaracteres
           id="equals"
           key={"equals"}
-          onClick={handleEqual}
+          onClick={() => handleOperator("=")}
           caracter={"="}
         />
         <ButtonCaracteres
           id="clear"
           key={"clear"}
-          onClick={() => handleClear("C")}
+          onClick={() => handleOperator("C")}
           caracter={"C"}
         />
         <ButtonCaracteres
           id="decimal"
           key={"decimal"}
-          onClick={() => handlePoint(".")}
+          onClick={() => handleOperator(".")}
           caracter={"."}
+        />
+        <ButtonCaracteres
+          id="negative"
+          key={"negative"}
+          onClick={() => handleOperator("negative")}
+          caracter={"+/-"}
+        />
+        <ButtonCaracteres
+          id="porcentage"
+          key={"porcentage"}
+          onClick={() => handleOperator("%")}
+          caracter={"%"}
         />
       </div>
     </div>
