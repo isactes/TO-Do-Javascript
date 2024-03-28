@@ -1,42 +1,42 @@
 const numberCalcu = [
   {
-    number: 1,
+    number: "1",
     id: "one"
   },
   {
-    number: 2,
+    number: "2",
     id: "two"
   },
   {
-    number: 3,
+    number: "3",
     id: "three"
   },
   {
-    number: 4,
+    number: "4",
     id: "four"
   },
   {
-    number: 5,
+    number: "5",
     id: "five"
   },
   {
-    number: 6,
+    number: "6",
     id: "six"
   },
   {
-    number: 7,
+    number: "7",
     id: "seven"
   },
   {
-    number: 8,
+    number: "8",
     id: "eight"
   },
   {
-    number: 9,
+    number: "9",
     id: "nine"
   },
   {
-    number: 0,
+    number: "0",
     id: "zero"
   }
 ]
@@ -47,7 +47,7 @@ const symbolCalcu = [
     id: "divide"
   },
   {
-    simbole: "x",
+    simbole: "*",
     id: "multiply"
   },
   {
