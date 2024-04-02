@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "../components/nav/nav";
-import FooterMain from "../components/footer/footer";
 import SideNavar from "../components/sidenava/SideNav";
 import PageHome from "../pages/home/home";
 import { namesNavar } from "../utilities";
@@ -53,7 +52,6 @@ function WebClone() {
         </div>
       </div>
       <PageHome/>
-      {/* <FooterMain /> */}
     </>
   );
 }
