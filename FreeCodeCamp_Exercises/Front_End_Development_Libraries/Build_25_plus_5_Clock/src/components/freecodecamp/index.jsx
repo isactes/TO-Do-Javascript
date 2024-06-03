@@ -12,7 +12,8 @@ function Clock({
   handleSessionDrecrement,
   handlePlay,
   handlePuase,
-  handleReset
+  handleReset,
+  title
 
 }) {
 
@@ -164,7 +165,7 @@ function Clock({
                   id="timer-label"
                   className="text-gray-300 uppercase text-2xl "
                 >
-                  Session
+                  {title}
                 </p>
                 <div className="flex items-center justify-center space-x-4 mt-4">
                   <span className="w-[1px] h-24 bg-gray-400"></span>
@@ -285,7 +286,8 @@ Clock.propTypes = {
   handleSessionDrecrement: PropTypes.func,
   handlePlay: PropTypes.func,
   handlePuase: PropTypes.func,
-  handleReset: PropTypes.func
+  handleReset: PropTypes.func,
+  title: PropTypes.string
 }
 
 
