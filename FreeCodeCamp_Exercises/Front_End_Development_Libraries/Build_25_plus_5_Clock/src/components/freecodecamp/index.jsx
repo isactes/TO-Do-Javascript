@@ -14,7 +14,8 @@ function Clock({
   handlePuase,
   handleReset,
   title,
-  idBeed
+  idBeed,
+  audioRef
 
 }) {
 
@@ -272,6 +273,7 @@ function Clock({
         </div>
         <audio
         id={idBeed}
+        ref={audioRef}
         preload="auto"
         src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
         />
@@ -294,7 +296,8 @@ Clock.propTypes = {
   handlePuase: PropTypes.func,
   handleReset: PropTypes.func,
   title: PropTypes.string,
-  idBeed: PropTypes.string
+  idBeed: PropTypes.string,
+  audioRef: PropTypes.any
 }
 
 
