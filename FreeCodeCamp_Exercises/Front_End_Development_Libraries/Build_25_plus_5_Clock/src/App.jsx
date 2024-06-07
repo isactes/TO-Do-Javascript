@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Clock from "./components/freecodecamp";
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
   const [play, setPlay] = useState(false);
   const [timingType, setTimingType] = useState("SESSION");
   const [timeLeft, setTimeLeft] = useState(1500);
+
+  const audio = useRef(null)
 
   //  handlePlay play
   const timeout = setTimeout(() => {
@@ -17,6 +19,7 @@ function App() {
 
   //  title
   const title = timingType === "SESSION" ? "Session" : "Break";
+  
   //  BREAK LENGTH
   const handleBreakIncrement = () => {
     if (breakLengthNumber < 60) {
@@ -38,18 +41,70 @@ function App() {
   const handleSessionIncrement = () => {
     if (sessionLengthNumber < 60) {
       setseSionLengthNumber(sessionLengthNumber + 1);
+      setTimeLeft(timeLeft + 60)
     } else {
       console.log("You arrived to 60 of time 🕗 sessionLengthNumber");
     }
   };
-
+  
   const handleSessionDrecrement = () => {
     if (sessionLengthNumber > 1) {
       setseSionLengthNumber(sessionLengthNumber - 1);
+      setTimeLeft(timeLeft - 60)
     } else {
       console.log("You less to 1 of time 🕗 sessionLengthNumber");
     }
   };
+
+  // handleReset
+  const handleReset = () => {
+    clearTimeout(timeout);
+    setPlay(false)
+    setTimeLeft(1500)
+    setBreakLengthNumber(5)
+    setseSionLengthNumber(25)
+    setTimingType("SESSION")
+    audio.current.pause()
+    audio.current.currenttime = 0
+  }
+  // handlePlay
+  const handlePlay = () => {
+    clearTimeout(timeout);
+    if (play) {
+      setPlay(false);
+    } else {
+      setPlay(true);
+    }
+  };
+
+  //  resetTimer 
+  const resetTimer =() => {
+    if (!timeLeft && timingType === "SESSION") {
+      setTimeLeft(breakLengthNumber * 60)
+      setTimingType("BREAK")
+      audio.current.play();
+    }
+    if (!timeLeft && timingType === "BREAK") {
+      setTimeLeft(sessionLengthNumber * 60)
+      setTimingType("SESSION")
+      audio.current.pause()
+      audio.current.currentTime = 0
+    }
+  }
+
+  const clock = () => {
+    if (play) {
+      timeout
+      resetTimer()
+    } else {
+      clearTimeout(timeout)
+    }
+  }
+
+
+  useEffect(() => {
+    clock()
+  }, [play, timeLeft, timeout])
 
   //  timeLeft
   const timeFormater = () => {
@@ -61,14 +116,6 @@ function App() {
     return `${formatedMinutes}:${formatedSeconds}`;
   };
 
-  const handlePlay = () => {
-    clearTimeout(timeout);
-    if (play) {
-      setPlay(false);
-    } else {
-      setPlay(true);
-    }
-  };
 
   return (
     <>
@@ -90,8 +137,17 @@ function App() {
         // handlePuase
         handlePuase={() => {}}
         // handleReset
-        handleReset={() => {}}
+        handleReset={handleReset}
+        // Audio
+        idBeed={"beep"}
+        audioRef={audio}
       />
+      {/* <audio
+        id="beep"
+        preload="auto"
+        ref={audio}
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+        /> */}
     </>
   );
 }
