@@ -9,13 +9,50 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(1500);
 
   const audio = useRef(null)
+  const timeoutRef = useRef(null)
+
+  useEffect(() => {
+    if (play) {
+      timeoutRef.current = setTimeout(() => {
+        setTimeLeft((prevTimeLeft) => {
+          if(prevTimeLeft === 0){
+            if (timingType === "SESSION") {
+              audio.current.play();
+              setTimingType("BREAK");
+              return breakLengthNumber * 60
+            } else {
+              audio.current.pause();
+              audio.current.currentTime = 0
+              setTimingType("SESSION");
+                return sessionLengthNumber * 60
+            }
+          } else {
+            return prevTimeLeft -1
+          }
+        })
+      }, 1000)
+    }
+    return () => clearTimeout(timeoutRef.current)
+  }, [play, timeLeft, timingType, breakLengthNumber, sessionLengthNumber])
 
   //  handlePlay play
-  const timeout = setTimeout(() => {
-    if (timeLeft && play) {
-      setTimeLeft(timeLeft - 1);
-    }
-  }, 1000);
+  const handlePlay = () => {
+  setPlay((prevPlay) => !prevPlay)
+}
+
+// handleReset
+const handleReset = () => {
+  clearTimeout(timeoutRef.current);
+  setPlay(false)
+  setTimeLeft(1500)
+  setBreakLengthNumber(5)
+  setseSionLengthNumber(25)
+  setTimingType("SESSION");
+  if (audio.current) {
+    audio.current.pause();
+    audio.current.currentTime = 0
+  }
+}
 
   //  title
   const title = timingType === "SESSION" ? "Session" : "Break";
@@ -41,7 +78,9 @@ function App() {
   const handleSessionIncrement = () => {
     if (sessionLengthNumber < 60) {
       setseSionLengthNumber(sessionLengthNumber + 1);
-      setTimeLeft(timeLeft + 60)
+      if(!play){
+        setTimeLeft((sessionLengthNumber + 1) * 60)
+      }
     } else {
       console.log("You arrived to 60 of time 🕗 sessionLengthNumber");
     }
@@ -50,70 +89,20 @@ function App() {
   const handleSessionDrecrement = () => {
     if (sessionLengthNumber > 1) {
       setseSionLengthNumber(sessionLengthNumber - 1);
-      setTimeLeft(timeLeft - 60)
+      if(!play){
+        setTimeLeft((sessionLengthNumber - 1) * 60)
+      }
     } else {
       console.log("You less to 1 of time 🕗 sessionLengthNumber");
     }
   };
 
-  // handleReset
-  const handleReset = () => {
-    clearTimeout(timeout);
-    setPlay(false)
-    setTimeLeft(1500)
-    setBreakLengthNumber(5)
-    setseSionLengthNumber(25)
-    setTimingType("SESSION")
-    audio.current.pause()
-    audio.current.currenttime = 0
-  }
-  // handlePlay
-  const handlePlay = () => {
-    clearTimeout(timeout);
-    if (play) {
-      setPlay(false);
-    } else {
-      setPlay(true);
-    }
-  };
-
-  //  resetTimer 
-  const resetTimer =() => {
-    if (!timeLeft && timingType === "SESSION") {
-      setTimeLeft(breakLengthNumber * 60)
-      setTimingType("BREAK")
-      audio.current.play();
-    }
-    if (!timeLeft && timingType === "BREAK") {
-      setTimeLeft(sessionLengthNumber * 60)
-      setTimingType("SESSION")
-      audio.current.pause()
-      audio.current.currentTime = 0
-    }
-  }
-
-  const clock = () => {
-    if (play) {
-      timeout
-      resetTimer()
-    } else {
-      clearTimeout(timeout)
-    }
-  }
-
-
-  useEffect(() => {
-    clock()
-  }, [play, timeLeft, timeout])
 
   //  timeLeft
   const timeFormater = () => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft - minutes * 60;
-    const formatedSeconds = seconds < 10 ? "0" + seconds : seconds;
-    const formatedMinutes = minutes < 10 ? "0" + minutes : minutes;
-
-    return `${formatedMinutes}:${formatedSeconds}`;
+    return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
 
@@ -134,20 +123,12 @@ function App() {
         timeLeft={timeFormater()}
         // handlePlay
         handlePlay={handlePlay}
-        // handlePuase
-        handlePuase={() => {}}
         // handleReset
         handleReset={handleReset}
         // Audio
         idBeed={"beep"}
         audioRef={audio}
       />
-      {/* <audio
-        id="beep"
-        preload="auto"
-        ref={audio}
-        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-        /> */}
     </>
   );
 }
