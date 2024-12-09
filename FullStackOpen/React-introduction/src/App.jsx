@@ -3,8 +3,14 @@ import './App.css'
 import MyFirstComponent from './components/first-components'
 import CeroComponent from './components/cero-components/indeix'
 import CountComponent from './components/count-component'
+import PropsComponent from './components/props-component'
+import FunctionAuxComp from './components/props-component/indexAuxCom'
+import CounterTwo from './components/count-component/index2'
 
 function App() {
+
+  const names = "Fidel"
+  const ages = 30
 
   return (
     <>
@@ -21,6 +27,19 @@ function App() {
       <div>
         <CeroComponent / >
       </div>
+      <PropsComponent 
+        name="Isac"
+      />
+      <PropsComponent
+        name={names}
+        age={ages} 
+      />
+      <FunctionAuxComp 
+      name={names} 
+      age={ages}
+      />
+
+      <CounterTwo />
     </>
   )
 }
